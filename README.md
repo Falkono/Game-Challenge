@@ -1,5 +1,5 @@
 # Game-Challenge
 Game Challenge in GODOT
 
-Challenge from:
+Challenge:
  https://20_games_challenge.gitlab.io/challenge/
