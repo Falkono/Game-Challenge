@@ -5,8 +5,8 @@ extends Node
 var one_score : int
 var two_score : int
 
-@onready var winning_one : Winning_Zone = $Winning_Zone
-@onready var winning_two : Winning_Zone = $Winning_Zone2
+@onready var winning_one : Winning_Zone = $One/Winning_Zone
+@onready var winning_two : Winning_Zone = $Two/Winning_Zone2
 
 signal player_scored
 

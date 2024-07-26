@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn2rsnu4eucth"]
+[gd_scene load_steps=8 format=3 uid="uid://bn2rsnu4eucth"]
 
 [ext_resource type="Texture2D" uid="uid://cawdbjs5x6l4t" path="res://sprites/Bg.png" id="1_8tpm7"]
 [ext_resource type="Script" path="res://scripts/points.gd" id="2_18ycs"]
 [ext_resource type="PackedScene" uid="uid://c6jp3lssbk1xh" path="res://scenes/winning_zone.tscn" id="2_jhvt3"]
 [ext_resource type="PackedScene" uid="uid://n4uwmyxejuvg" path="res://scenes/ball.tscn" id="4_vfifb"]
+[ext_resource type="PackedScene" uid="uid://cjbp6qe5ybfso" path="res://scenes/paddle.tscn" id="5_ls7yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcblu"]
 size = Vector2(1152, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fv47"]
+font_size = 60
 
 [node name="Game" type="Node2D"]
 
@@ -32,12 +36,43 @@ shape = SubResource("RectangleShape2D_pcblu")
 [node name="Points" type="Node" parent="."]
 script = ExtResource("2_18ycs")
 
-[node name="Winning_Zone" parent="Points" instance=ExtResource("2_jhvt3")]
+[node name="One" type="Node" parent="Points"]
+
+[node name="PointLabelOne" type="Label" parent="Points/One"]
+offset_left = 496.0
+offset_right = 571.0
+offset_bottom = 83.0
+size_flags_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_5fv47")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Winning_Zone" parent="Points/One" instance=ExtResource("2_jhvt3")]
 position = Vector2(-10, 324)
 
-[node name="Winning_Zone2" parent="Points" instance=ExtResource("2_jhvt3")]
+[node name="Two" type="Node" parent="Points"]
+
+[node name="PointLabelTwo" type="Label" parent="Points/Two"]
+offset_left = 576.0
+offset_right = 651.0
+offset_bottom = 83.0
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_5fv47")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Winning_Zone2" parent="Points/Two" instance=ExtResource("2_jhvt3")]
 position = Vector2(1162, 324)
 player = 1
 
 [node name="Ball" parent="." instance=ExtResource("4_vfifb")]
 position = Vector2(576, 324)
+
+[node name="Paddle" parent="." instance=ExtResource("5_ls7yn")]
+position = Vector2(64, 324)
+
+[node name="Paddle2" parent="." instance=ExtResource("5_ls7yn")]
+position = Vector2(1088, 324)
