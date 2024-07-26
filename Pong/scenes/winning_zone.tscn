@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6jp3lssbk1xh"]
+[gd_scene load_steps=3 format=3 uid="uid://c6jp3lssbk1xh"]
+
+[ext_resource type="Script" path="res://scripts/winning_zone.gd" id="1_0cvmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gao4"]
 size = Vector2(20, 648)
@@ -6,7 +8,11 @@ size = Vector2(20, 648)
 [node name="Winning_Zone" type="Area2D"]
 position = Vector2(0, 324)
 rotation = 1.5708
+script = ExtResource("1_0cvmy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_8gao4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
