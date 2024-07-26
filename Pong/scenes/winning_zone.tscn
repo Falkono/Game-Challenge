@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6jp3lssbk1xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gao4"]
+size = Vector2(20, 648)
+
+[node name="Winning_Zone" type="Area2D"]
+position = Vector2(0, 324)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8gao4")
