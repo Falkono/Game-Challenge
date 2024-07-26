@@ -71,8 +71,8 @@ player = 1
 [node name="Ball" parent="." instance=ExtResource("4_vfifb")]
 position = Vector2(576, 324)
 
-[node name="Paddle" parent="." instance=ExtResource("5_ls7yn")]
+[node name="Paddle" parent="." groups=["Paddle"] instance=ExtResource("5_ls7yn")]
 position = Vector2(64, 324)
 
-[node name="Paddle2" parent="." instance=ExtResource("5_ls7yn")]
+[node name="Paddle2" parent="." groups=["Paddle"] instance=ExtResource("5_ls7yn")]
 position = Vector2(1088, 324)

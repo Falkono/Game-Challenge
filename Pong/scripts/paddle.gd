@@ -8,4 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("up"):
+		velocity.y = -100
+	elif Input.is_action_pressed("down"):
+		velocity.y = 100
+	else:
+		velocity.y = 0
+	
+	move_and_slide()
